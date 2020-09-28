@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Личный сайт студента GeekBrains</title>
+	<link rel="stylesheet" href="style.css"> 
+	<script type="text/javascript">	
+		
+		var score = 0;
+
+		function checkAnswer(inputId, answers){
+			var userAnswer = document.getElementById(inputId).value;
+			userAnswer = userAnswer.toLowerCase();
+			for(var i = 0; i < answers.length; i++){
+				if(userAnswer == answers[i]){
+					score++;
+					break;
+				}
+			}
+		}
+		
+		function checkAnswers() {
+			checkAnswer("userAnswer1", ["8", "eight"]);
+			checkAnswer("userAnswer2", ["8 Milliard", "a lot"]);
+			checkAnswer("userAnswer3", ["195", "one houndred ninety five"]);
+			
+			alert("You answered on " + score + " Puzzles");
+			score = 0;			
+		}
+		
+	</script>
+</head>
+<body>
+
+<div class="content">
+	<div class="header">
+		<a href="index.html">Main</a>
+		<a href="#">Puzzle</a>
+		<a href="guess.html">Guessing</a>
+	</div>
+
+	<div class="contentWrap">
+		<div class="content">
+			<div class="center">
+
+				<h1>Puzzle game</h1>
+
+				<div class="box">
+				
+					<p>How many eyes does a spider have?</p>
+					<input type="text" id="userAnswer1">
+
+					<p>how many people in the world?</p>
+					<input type="text" id="userAnswer2">
+
+					<p>How many countries in the world?</p>
+					<input type="text" id="userAnswer3">
+				
+					<br>
+				
+					<!-- this element like a button input-->
+					<a href="#" onclick="checkAnswers();">Answer</a>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+	Copyright &copy; Igal Schwartz
+</div>
+
+
+</body>
+</html>
